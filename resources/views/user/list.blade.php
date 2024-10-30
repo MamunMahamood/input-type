@@ -55,9 +55,12 @@
                                 <div class="d-flex">
                                     <div class="d-flex align-items-center">
                                         <a href="" class="mr-1">
+                                            <span class="badge badge-success">Detail</span>
+                                        </a>|
+                                        <a href="{{route('user.edit', ['id'=>$user->id])}}" class=" ml-1 mr-1">
                                             <span class="badge badge-primary">Edit</span>
                                         </a>|
-                                        <a href="" class="ml-1">
+                                        <a href="{{route('user.delete', ['id'=>$user->id])}}" class="ml-1">
                                             <span class="badge badge-danger">Delete</span>
                                         </a>
 

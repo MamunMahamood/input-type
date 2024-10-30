@@ -17,22 +17,23 @@ return new class extends Migration
             $table->string('email')->unique();                 // Unique email field
             $table->timestamp('email_verified_at')->nullable(); // Email verification timestamp
             $table->string('password');                        // Password field
-            $table->string('username')->nullable();            // text
+            $table->string('username');            
             $table->string('website')->nullable();             // url
-            $table->string('phone')->nullable();               // tel
-            $table->integer('age')->nullable();                // number
+            $table->string('phone');               // tel
+            $table->integer('age');                // number
             $table->integer('rating')->nullable();             // range
-            $table->date('birthdate')->nullable();             // date
+            $table->date('birthdate');             // date
             $table->string('birthmonth')->nullable();          // month
             $table->string('birthweek')->nullable();           // week
             $table->time('preferred_time')->nullable();        // time
             $table->dateTime('appointment')->nullable();       // datetime-local
             $table->string('favorite_color')->nullable();      // color
             $table->boolean('newsletter')->default(false);     // checkbox
-            $table->enum('gender', ['male', 'female', 'other'])->nullable(); // radio
-            $table->string('profile_picture')->nullable();     // file
+            $table->enum('gender', ['male', 'female', 'other']); // radio
+            $table->string('profile_picture');     // file
             $table->string('referrer')->nullable();            // hidden       
             $table->enum('status', ['active', 'inactive'])->default('active'); // image
+            $table->unsignedInteger('is_delete')->default(0);
             $table->rememberToken();                           // Remember token for authentication
             $table->timestamps();
         });
