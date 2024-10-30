@@ -31,8 +31,8 @@ return new class extends Migration
             $table->boolean('newsletter')->default(false);     // checkbox
             $table->enum('gender', ['male', 'female', 'other'])->nullable(); // radio
             $table->string('profile_picture')->nullable();     // file
-            $table->string('referrer')->nullable();            // hidden
-            $table->string('action_image')->nullable();        // image
+            $table->string('referrer')->nullable();            // hidden       
+            $table->enum('status', ['active', 'inactive'])->default('active'); // image
             $table->rememberToken();                           // Remember token for authentication
             $table->timestamps();
         });
