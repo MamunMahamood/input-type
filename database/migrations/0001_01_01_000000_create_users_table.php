@@ -13,11 +13,27 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('name');                            // Basic name field
+            $table->string('email')->unique();                 // Unique email field
+            $table->timestamp('email_verified_at')->nullable(); // Email verification timestamp
+            $table->string('password');                        // Password field
+            $table->string('username')->nullable();            // text
+            $table->string('website')->nullable();             // url
+            $table->string('phone')->nullable();               // tel
+            $table->integer('age')->nullable();                // number
+            $table->integer('rating')->nullable();             // range
+            $table->date('birthdate')->nullable();             // date
+            $table->string('birthmonth')->nullable();          // month
+            $table->string('birthweek')->nullable();           // week
+            $table->time('preferred_time')->nullable();        // time
+            $table->dateTime('appointment')->nullable();       // datetime-local
+            $table->string('favorite_color')->nullable();      // color
+            $table->boolean('newsletter')->default(false);     // checkbox
+            $table->enum('gender', ['male', 'female', 'other'])->nullable(); // radio
+            $table->string('profile_picture')->nullable();     // file
+            $table->string('referrer')->nullable();            // hidden
+            $table->string('action_image')->nullable();        // image
+            $table->rememberToken();                           // Remember token for authentication
             $table->timestamps();
         });
 
