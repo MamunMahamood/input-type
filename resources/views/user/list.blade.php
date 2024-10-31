@@ -22,7 +22,8 @@
                             <th scope="col">Age</th>
                             <th scope="col">Birthdate</th>
                             <th scope="col">Gender</th>
-                            <th scope="col">Favorite Color</th>
+                            <th scope="col">Status</th>
+                            <!-- <th scope="col">Favorite Color</th> -->
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
@@ -42,9 +43,10 @@
                             <td>{{$user->age}}</td>
                             <td>{{$user->birthdate}}</td>
                             <td>{{$user->gender}}</td>
-                            <td class="text-center">
+                            <td><span class="{{$user->status=='active'? 'badge badge-success': 'badge badge-danger'}}">{{$user->status}}</span></td>
+                            <!-- <td class="text-center">
                                 <span style="display: inline-block; width: 50px; height: 20px; background-color: {{ $user->favorite_color }};"></span>
-                            </td>
+                            </td> -->
                             
 
                             
@@ -54,7 +56,7 @@
                             <td>
                                 <div class="d-flex">
                                     <div class="d-flex align-items-center">
-                                        <a href="" class="mr-1">
+                                        <a href="{{route('user.profile', ['id'=> $user->id])}}" class="mr-1">
                                             <span class="badge badge-success">Detail</span>
                                         </a>|
                                         <a href="{{route('user.edit', ['id'=>$user->id])}}" class=" ml-1 mr-1">

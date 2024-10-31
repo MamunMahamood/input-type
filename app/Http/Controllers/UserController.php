@@ -132,4 +132,14 @@ class UserController extends Controller
         ->with('success', 'Record created successfully!');
 
     }
+
+
+    public function profile($id){
+
+        $user = User::findorfail($id);
+
+        return view('user.profile', compact('user'));
+
+
+    }
 }
