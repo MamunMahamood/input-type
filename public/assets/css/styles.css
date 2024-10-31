@@ -1,3 +1,14 @@
 .bg-color-header{
     background-color: #81c7e3;
 }
+
+.center{
+    text-align: center;
+}
+
+.center h3{
+    margin-left: 41%;
+}
+.center a{
+    margin-left: 30%;
+}

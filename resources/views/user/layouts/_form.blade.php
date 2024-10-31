@@ -29,7 +29,7 @@
 </div>
 
 <div class="form-group col-6">
-    <label for="username">Username</label>
+    <label for="username">Username<span style="color: red; margin-left: 3px;">{{ isset($user) && $user->exists ? '' : '*' }}</span></label>
     <input type="text" class="form-control" id="username" name="username" value="{{ old('username', isset($user)? $user->username : '') }}">
     @error('username')
     <div class="text-danger text-sm">{{ $message }}</div>
@@ -37,7 +37,7 @@
 </div>
 
 <div class="form-group col-6">
-    <label for="website">Website</label>
+    <label for="website">Website<span style="color: red; margin-left: 3px;">{{ isset($user) && $user->exists ? '' : '*' }}</span></label>
     <input type="url" class="form-control" id="website" name="website" value="{{ old('website', isset($user)? $user->website : '') }}">
     @error('website')
     <div class="text-danger text-sm">{{ $message }}</div>
@@ -45,7 +45,7 @@
 </div>
 
 <div class="form-group col-6">
-    <label for="phone">Phone</label>
+    <label for="phone">Phone<span style="color: red; margin-left: 3px;">{{ isset($user) && $user->exists ? '' : '*' }}</span></label>
     <input type="tel" class="form-control" id="phone" name="phone" value="{{ old('phone', isset($user)? $user->phone : '') }}">
     @error('phone')
     <div class="text-danger text-sm">{{ $message }}</div>
@@ -53,7 +53,7 @@
 </div>
 
 <div class="form-group col-6">
-    <label for="age">Age</label>
+    <label for="age">Age<span style="color: red; margin-left: 3px;">{{ isset($user) && $user->exists ? '' : '*' }}</span></label>
     <input type="number" class="form-control" id="age" name="age" value="{{ old('age', isset($user)? $user->age : '') }}">
     @error('age')
     <div class="text-danger text-sm">{{ $message }}</div>
@@ -70,7 +70,7 @@
 </div>
 
 <div class="form-group col-6">
-    <label for="birthdate">Birthdate</label>
+    <label for="birthdate">Birthdate<span style="color: red; margin-left: 3px;">{{ isset($user) && $user->exists ? '' : '*' }}</span></label>
     <input type="date" class="form-control" id="birthdate" name="birthdate" value="{{ old('birthdate', isset($user)? $user->birthdate : '') }}">
     @error('birthdate')
     <div class="text-danger text-sm">{{ $message }}</div>
@@ -127,7 +127,7 @@
 </div>
 
 <div class="form-group col-6">
-    <label>Gender</label><br>
+    <label>Gender<span style="color: red; margin-left: 3px;">{{ isset($user) && $user->exists ? '' : '*' }}</span></label><br>
     <div class="d-flex align-items-center">
         <div class="mr-3">
             <input type="radio" id="male" name="gender" value="male" {{ old('gender', isset($user)? $user->gender : '') === 'male' ? 'checked' : '' }}>
@@ -148,7 +148,7 @@
 </div>
 
 <div class="form-group col-6">
-    <label for="profile_picture">Profile Picture</label>
+    <label for="profile_picture">Profile Picture<span style="color: red; margin-left: 3px;">{{ isset($user) && $user->exists ? '' : '*' }}</span></label>
     <input type="file" class="form-control-file" id="profile_picture" name="profile_picture">
     @error('profile_picture')
     <div class="text-danger text-sm">{{ $message }}</div>
